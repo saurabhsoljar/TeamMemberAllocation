@@ -13,3 +13,8 @@ if(close){
         nav.classList.remove('active')
     })
 }
+
+
+
+// shop page script
+
