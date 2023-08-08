@@ -713,6 +713,25 @@ footer .copyright{
         width: 100%;
     }
 
+    /* About page */
+
+    #about-head{
+        flex-direction: column;
+    }
+
+    #about-head img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #about-head div{
+        padding-left: 0px;
+    }
+
+    #about-app .video{
+        width: 100%;
+    }
+
 }
 
 
@@ -886,5 +905,42 @@ footer .copyright{
     font-weight: 700;
     color: #c9cbce;
     z-index: -9;
+}
+
+
+/* About page */
+
+#page-header.about-header{
+    background-image: url("img/about/banner.png");
+}
+
+#about-head{
+    display: flex;
+    align-items: center;
+}
+
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+
+#about-head div{
+    padding-left: 40px;
+}
+
+#about-app{
+    text-align: center;
+}
+
+#about-app.video{
+    width: 70%;
+    height: 100%;
+    margin: 30px auto 0 auto;
+}
+
+.video video{
+    width: 60%;
+    height: 80%;
+    border-radius: 20px;
 }
 
