@@ -38,13 +38,40 @@ html,body{
     background-color: rgb(92, 141, 92);
 }
 
+.elem h2{
+    font-weight: 200;
+}
+
 .elem{
     display: flex;
     /* background-color: red;
     width: 10px; */
+    align-items: center;
+    gap: 20px;
 } 
 .box{
     padding: 10px;
     background-color: #fff;
+    color: black;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 10px 20px;
     border-radius: 5px;
+}
+
+#pbtm{
+    /* width: 100%; */
+    height: calc(100% - 100px);
+    padding: 20px;
+}
+
+.bubble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(72, 104, 72);
+    color: white;
+    border-radius: 50%;
 }
