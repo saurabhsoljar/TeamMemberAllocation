@@ -1,4 +1,12 @@
-var timer = 3;
+var timer = 60;
+var score = 0;
+
+
+
+function increaseScore(){
+    score +=10;
+    document.querySelectorAll("scoreval").textContent = score;
+}
 
 function gatNewHit(){
     var rn = Math.floor(Math.random()*10);
@@ -30,6 +38,12 @@ function runTime(){
     
 }
 
+document.querySelector("#pbtm").addEventListener("click",
+function(dets){
+    alert("chal rha hy");
+});
+
 runTime();
 makeBubble();
 gatNewHit();
+ 
