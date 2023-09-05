@@ -15,11 +15,11 @@ html,body{
     background-color: #fff;
 }
 
-#home{
+/* #home{
     width: 100%;
     min-height: 100vh;
     border: 2px solid red;
-}
+} */
 
 #nav{
     display: flex;
