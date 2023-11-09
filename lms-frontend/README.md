@@ -1,6 +1,6 @@
-LMS Frontend 
+# LMS Frontend 
 
-Setup instructions
+### Setup instructions
 
 1.Clone the project
 
@@ -8,15 +8,15 @@ Setup instructions
 
 2.Move into the directory
 ...
- cd lms-frontend-en
+    cd lms-frontend
 ...
 
 3.Install dependencies
 ...
-npm i
+    npm i
 ...
 
 4.Run the server
 ...
-npm run dev
+    npm run dev
 ...
