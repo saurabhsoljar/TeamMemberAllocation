@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
+    '@react-native-community',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -16,5 +17,10 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-  },
+  },  
+
+  rules:{
+    'prettier/prettier':0,
+  }
+
 }
