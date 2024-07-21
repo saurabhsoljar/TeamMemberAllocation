@@ -32,256 +32,187 @@ import { MdOutlineFeedback } from "react-icons/md";
 
 
 function Sidebar() {
-  const sidebarItems = [
-    {
-      id: 1,
-      name: "Home",
-      icon: <GoHome />,
-    },
-    {
-      id: 2,
-      name: "Shorts",
-      icon: <SiYoutubeshorts />,
-    },
-    {
-      id: 3,
-      name: "Subscriptions",
-      icon: <MdOutlineSubscriptions />,
-    },
-  ];
-  const sidebarItems2 = [
-    {
-      id: 1,
-      name: "Your Channel",
-      icon: <PiUserSquareThin />,
-    },
-    {
-      id: 2,
-      name: "History",
-      icon: <MdHistory />,
-    },
-    {
-      id: 3,
-      name: "Playlists",
-      icon: <MdOutlineSubscriptions />,
-    },
-    {
-      id: 4,
-      name: "Your Videos",
-      icon: <BiVideo />,
-    },
-    {
-      id: 5,
-      name: "Watch later",
-      icon: <MdOutlineWatchLater />,
-    },
-    {
-      id: 6,
-      name: "Liked videos",
-      icon: <AiOutlineLike />,
-    },
-  ];
-  const sidebarItems3 = [
-    {
-      id: 1,
-      name: "Trending",
-      icon: <SiTrendmicro />,
-    },
-    {
-      id: 2,
-      name: "Shopping",
-      icon: <HiOutlineShoppingBag />,
-    },
-    {
-      id: 3,
-      name: "Music",
-      icon: <SiYoutubemusic />,
-    },
-    {
-      id: 4,
-      name: "Films",
-      icon: <PiFilmSlateLight />,
-    },
-    {
-      id: 5,
-      name: "Live",
-      icon: <CgMediaLive />,
-    },
-    {
-      id: 6,
-      name: "Gaming",
-      icon: <IoGameControllerOutline />,
-    },
-    {
-      id: 7,
-      name: "News",
-      icon: <FaRegNewspaper />,
-    },
-    {
-      id: 8,
-      name: "Sport",
-      icon: <TfiCup />,
-    },
-    {
-      id: 9,
-      name: "Courses",
-      icon: <SiStylelint />,
-    },
-    {
-      id: 10,
-      name: "Fashion & beauty",
-      icon: <PiLightbulbLight />,
-    },
-    {
-      id: 11,
-      name: "Padcasts",
-      icon: <MdPodcasts />,
-    },
-  ];
-  const sidebarItems4 = [
-    {
-      id: 1,
-      name: "Youtube Premium",
-      icon: <FaYoutube />,
-    },
-    {
-      id: 2,
-      name: "Youtube Studio",
-      icon: <SiYoutubestudio />,
-    },
-    {
-      id: 3,
-      name: "Youtube Music",
-      icon: <SiYoutubemusic />,
-    },
-    {
-      id: 4,
-      name: "Youtube Kids",
-      icon: <SiYoutubekids />,
-    },
-  ];
+  const {isSidebar,mobileShow,setMobileShow} = useUtils()
+const sidebarItems= [
+  {
+    groupname:"Home",
+    groupItems:[
+      {
+        id: 1,
+        name: "Home",
+        icon: <GoHome />,
+      },
+      {
+        id: 2,
+        name: "Shorts",
+        icon: <SiYoutubeshorts />,
+      },
+      {
+        id: 3,
+        name: "Subscriptions",
+        icon: <MdOutlineSubscriptions />,
+      },
+    ],
+  },
+  {
+    groupname:"You",
+    groupItems:[
+      {
+        id: 1,
+        name: "Your Channel",
+        icon: <PiUserSquareThin />,
+      },
+      {
+        id: 2,
+        name: "History",
+        icon: <MdHistory />,
+      },
+      {
+        id: 3,
+        name: "Playlists",
+        icon: <MdOutlineSubscriptions />,
+      },
+      {
+        id: 4,
+        name: "Your Videos",
+        icon: <BiVideo />,
+      },
+      {
+        id: 5,
+        name: "Watch later",
+        icon: <MdOutlineWatchLater />,
+      },
+      {
+        id: 6,
+        name: "Liked videos",
+        icon: <AiOutlineLike />,
+      },
+    ],
+  },
+  {
+    groupname:"Explore",
+    groupItems:[
+      {
+        id: 1,
+        name: "Trending",
+        icon: <SiTrendmicro />,
+      },
+      {
+        id: 2,
+        name: "Shopping",
+        icon: <HiOutlineShoppingBag />,
+      },
+      {
+        id: 3,
+        name: "Music",
+        icon: <SiYoutubemusic />,
+      },
+      {
+        id: 4,
+        name: "Films",
+        icon: <PiFilmSlateLight />,
+      },
+      {
+        id: 5,
+        name: "Live",
+        icon: <CgMediaLive />,
+      },
+      {
+        id: 6,
+        name: "Gaming",
+        icon: <IoGameControllerOutline />,
+      },
+      {
+        id: 7,
+        name: "News",
+        icon: <FaRegNewspaper />,
+      },
+      {
+        id: 8,
+        name: "Sport",
+        icon: <TfiCup />,
+      },
+      {
+        id: 9,
+        name: "Courses",
+        icon: <SiStylelint />,
+      },
+      {
+        id: 10,
+        name: "Fashion & beauty",
+        icon: <PiLightbulbLight />,
+      },
+      {
+        id: 11,
+        name: "Padcasts",
+        icon: <MdPodcasts />,
+      },
+    ],
+  },
+  {
+    groupname:"More From YouTub",
+    groupItems:[
+      {
+        id: 1,
+        name: "Youtube Premium",
+        icon: <FaYoutube />,
+      },
+      {
+        id: 2,
+        name: "Youtube Studio",
+        icon: <SiYoutubestudio />,
+      },
+      {
+        id: 3,
+        name: "Youtube Music",
+        icon: <SiYoutubemusic />,
+      },
+      {
+        id: 4,
+        name: "Youtube Kids",
+        icon: <SiYoutubekids />,
+      },
+    ],
+  }
+];
 
-  const sidebarItems5 = [
-    {
-      id: 1,
-      name: "Settings",
-      icon: <CiSettings />,
-    },
-    {
-      id: 2,
-      name: "Report History",
-      icon: <MdOutlineFlag />,
-    },
-    {
-      id: 3,
-      name: "Help",
-      icon: <IoHelpCircleOutline />,
-    },
-    {
-      id: 4,
-      name: "Send feedback",
-      icon: <MdOutlineFeedback />,
-    },
-  ];
+const ModelOverlay = () =>{
+  return(
+    <div className="flex fixed top-0 right-0 bottom-0 left-0 bg-black/50 z-30" onClick={() => setMobileShow(!mobileShow)}>
+
+    </div>
+  )
+}
+
   return (
-    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
+    <>
+        <div className={`${mobileShow ? "fixed top-0 bottom-0 left-0 transition-all duration-300 bg-white z-40 h-screen w-[70%] sm:w-[30%]" :"hidden h-[calc(100vh-6.625rem) w-[18%]"
+          
+        }xl:static xl:block px-2 lg:px-6 overflow-y-autoscroll overflow-x-hidden scrollbar-thin `}  >
       {/* Home */}
       <div className=" space-y-3 items-center">
-        {sidebarItems.map((item) => {
+        {sidebarItems.map((group) => {
           return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
-      </div>
-      <br />
-      <hr />
-      {/* You */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="flex items-center space-x-2">
-          <h1>You</h1>
-          <FaChevronRight />
-        </div>
-        {sidebarItems2.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
-      </div>
-      <br />
-      <hr />
-      {/* Explore */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="items-center space-x-2">
-          <h1 className=" font-semibold">Explore</h1>
-        </div>
-        {sidebarItems3.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
-      </div>
-      <br />
-      <hr />
-      {/* More section */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="items-center space-x-2">
-          <h1 className=" font-semibold">More From Youtube</h1>
-        </div>
-        {sidebarItems4.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer text-red-500">
-                {item.icon}
+            <div className="mb-5">
+              <h1 className="font-bold">{group.groupname}</h1>
+              {group.groupItems,map((item)=>(
+                <div
+                key={item.id}
+                className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1 my-3"
+              >
+                <div className="text-sm cursor-pointer">{item.icon}</div>
+                <span className="text-sm cursor-pointer">{item.name}</span>
               </div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
-        <hr />
-      </div>
-      <br />
-      {/* extra features */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="items-center space-x-2">
-          <h1 className=" font-semibold"></h1>
-        </div>
-        {sidebarItems5.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer">
-                {item.icon}
+              ))}
               </div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
+              
+
+              
           );
         })}
-        <hr />
       </div>
       <br />
+      <hr />
       <span className="text-xs text-gray-600 font-semibold">
         About Press Copyright <br /> Contact us Creators <br /> Advertise
         Developers <br />
@@ -291,6 +222,10 @@ function Sidebar() {
       <br />
       <p className="text-xs text-gray-500 mt-3">© 2024 Google LLC</p>
     </div>
+
+    {mobileShow ? <ModelOverlay/> : null}
+    </>
+
   );
 }
 
